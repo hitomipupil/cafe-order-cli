@@ -1,0 +1,15 @@
+{
+  "name": "cafe-order-cli",
+  "version": "0.1.0",
+  "description": "A Node.js CLI app to take cafe orders and generate receipts in TXT and PDF.",
+  "type": "module",
+  "main": "cafe-order.js",
+  "scripts": {
+    "start": "node cafe-order.js",
+    "menu": "node cafe-order.js menu"
+  },
+  "dependencies": {
+    "commander": "^14.0.2",
+    "pdfkit": "^0.17.2"
+  }
+}
