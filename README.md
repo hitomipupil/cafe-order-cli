@@ -1,4 +1,4 @@
-# Cafe Order CLI
+# Cafe Order CLI ☕
 
 A Node.js CLI app that takes cafe orders and generates formatted receipts in **PDF** (using **PDFKit**).
 
