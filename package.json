@@ -6,10 +6,14 @@
   "main": "cafe-order.js",
   "scripts": {
     "start": "node cafe-order.js",
-    "menu": "node cafe-order.js menu"
+    "menu": "node cafe-order.js menu",
+    "db:init": "node db/init.js",
+    "db:reset": "rm -f cafe.db && npm run db:init"
   },
   "dependencies": {
     "commander": "^14.0.2",
-    "pdfkit": "^0.17.2"
+    "pdfkit": "^0.17.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
   }
 }
