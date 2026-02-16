@@ -13,20 +13,18 @@ export const listProducts = async () => {
 export const getProductById = async (id) => {
   const normalizedId = Number(id);
   if (isNaN(normalizedId)) return null;
-  const product = await getProductByIdRepo(normalizedId);
-  if (product === undefined) return null;
-  return product;
+  return await getProductByIdRepo(normalizedId);
 };
 
 export const deleteProductById = async (id) => {
   const normalizedId = Number(id);
   if (isNaN(normalizedId)) return null;
   const productToDelete = await getProductById(normalizedId);
-  if (productToDelete === null) {
+  if (productToDelete == null) {
     return null;
   } else {
     await deleteProductByIdRepo(normalizedId);
-    return true;
+    return productToDelete;
   }
 };
 
@@ -39,7 +37,7 @@ export const addProduct = async (name, price) => {
   if (typeof lastId !== "number" || lastId < 0)
     throw new Error("creation failed");
   const productAdded = await getProductById(lastId);
-  if (productAdded === null) {
+  if (productAdded == null) {
     return null;
   } else {
     return productAdded;

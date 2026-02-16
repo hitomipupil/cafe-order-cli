@@ -5,7 +5,7 @@
   "type": "module",
   "main": "cafe-order.js",
   "scripts": {
-    "start": "node cafe-order.js",
+    "start": "node src/index.js",
     "menu": "node cafe-order.js menu",
     "db:init": "node db/init.js",
     "db:reset": "rm -f cafe.db && npm run db:init"

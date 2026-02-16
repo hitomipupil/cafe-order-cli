@@ -13,11 +13,11 @@ const db = new sqlite3.Database(
   dbPath,
   sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
   (err) => {
-    if (err) return console.error(err.message);
+    if (err) return console.error(err);
     db.run("PRAGMA foreign_keys = ON", (err) => {
       if (err) {
         db.close();
-        return console.error(err.message);
+        return console.error(err);
       }
       fs.readFile(schemaPath, "utf8", (err, data) => {
         if (err) {
@@ -28,7 +28,7 @@ const db = new sqlite3.Database(
         db.exec(data, (err) => {
           if (err) {
             db.close();
-            return console.error(err.message);
+            return console.error(err);
           }
           console.log("db initialized!");
           db.close();
